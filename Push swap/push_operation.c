@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_operation.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbin-nas <mbin-nas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 14:49:58 by mbin-nas          #+#    #+#             */
-/*   Updated: 2022/12/15 15:46:44 by mbin-nas         ###   ########.fr       */
+/*   Updated: 2022/12/16 12:01:31 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void push(t_source_stack **stack1, t_source_stack **stack2)
 {
     t_source_stack *temp;
 
-    if(*stack1 = NULL)
+    if(*stack1 == NULL)
         return ;
     temp = (*stack1)->next_value;
     (*stack1)->next_value = *stack2;

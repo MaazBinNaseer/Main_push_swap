@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_inputs.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbin-nas <mbin-nas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 16:07:36 by mbin-nas          #+#    #+#             */
-/*   Updated: 2022/12/15 16:29:49 by mbin-nas         ###   ########.fr       */
+/*   Updated: 2022/12/16 13:18:29 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static int check_duplciates(char **argv)
         while(argv[j])
         {
             if (j != i && check_comaprison(argv[i], argv[j]) == 0)
-            return (1);
+                    return (1);
             j++;
         }
         i++;
@@ -41,7 +41,7 @@ static int check_zero_args(char *argv)
     i = 0;
     if(check_sign(argv[i]))
         i++;
-    while(argv[i] && argv[i] == 0)
+    while(argv[i] && argv[i] == '0')
         i++;
     if(argv[i] != '\0')
         return (0);
@@ -75,7 +75,12 @@ int valid_input(char **argv)
     {
         if(!check_args_nbrs(argv[i]))
             return (0);
-        
-    } 
-    
+        zero_check += check_zero_args(argv[i]);
+        i++;
+    }
+    if(zero_check > 1)
+        return (0);
+    if(check_duplciates(argv))
+        return (0);
+    return (1); 
 }

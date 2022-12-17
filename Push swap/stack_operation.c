@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_operation.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbin-nas <mbin-nas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/15 14:19:16 by mbin-nas          #+#    #+#             */
-/*   Updated: 2022/12/15 15:49:28 by mbin-nas         ###   ########.fr       */
+/*   Updated: 2022/12/16 00:03:49 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void add_data_to_bottom_stack(t_source_stack **stack, t_source_stack *new_stack)
 }
 
 //? Get the size of the stack 
-int stack_size(t_source_stack *stack)
+int fetch_stack_size(t_source_stack *stack)
 {
     int stack_size;
 
