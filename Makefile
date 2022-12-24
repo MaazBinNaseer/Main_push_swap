@@ -1,6 +1,6 @@
 NAME = push_swap
 CFILES = check.c execute.c input_check.c main.c moves.c position.c push.c quick_sort.c\
-		 reverse_rotate.c rotate.c soritng.c stack.c start_stack.c swap.c utils.c ft_split.c
+		 reverse_rotate.c rotate.c soritng.c stack.c start_stack.c swap.c helpers.c ft_split.c
 OBJECTS = $(CFILES:.c=.o)
 CFLAGS = -Wall -Wextra -Werror 
 CC = gcc

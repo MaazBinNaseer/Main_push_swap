@@ -54,5 +54,5 @@ void	quick_sort(t_stack **stack)
 	else if ((*stack)->next->index == highest)
 		do_rra(stack);
 	if ((*stack)->index > (*stack)->next->index)
-		do_sa(stack);
+		swap_a(stack);
 }

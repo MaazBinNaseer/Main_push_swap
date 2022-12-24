@@ -27,7 +27,7 @@ int	check_sorted(t_stack *stack)
 static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
 	if (stack_size == 2 && !check_sorted(*stack_a))
-		do_sa(stack_a);
+		swap_a(stack_a);
 	else if (stack_size == 3)
 		quick_sort(stack_a);
 	else if (stack_size > 3 && !check_sorted(*stack_a))
