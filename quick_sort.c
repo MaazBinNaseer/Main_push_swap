@@ -50,7 +50,7 @@ void	quick_sort(t_stack **stack)
 		return ;
 	highest = find_highest_index(*stack);
 	if ((*stack)->index == highest)
-		do_ra(stack);
+		rotate_a(stack);
 	else if ((*stack)->next->index == highest)
 		do_rra(stack);
 	if ((*stack)->index > (*stack)->next->index)

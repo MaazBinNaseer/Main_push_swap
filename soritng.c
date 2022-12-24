@@ -34,7 +34,7 @@ static void	push_all_save_three(t_stack **stack_a, t_stack **stack_b)
 			pushed++;
 		}
 		else
-			do_ra(stack_a);
+			rotate_a(stack_a);
 		i++;
 	}
 	while (stack_size - pushed > 3)
@@ -69,7 +69,7 @@ static void	shift_stack(t_stack **stack_a)
 	{
 		while (lowest_pos > 0)
 		{
-			do_ra(stack_a);
+			rotate_a(stack_a);
 			lowest_pos--;
 		}
 	}

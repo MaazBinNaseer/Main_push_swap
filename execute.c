@@ -42,7 +42,7 @@ static void	do_rotate_a(t_stack **a, int *moves)
 	{
 		if (*moves > 0)
 		{
-			do_ra(a);
+			rotate_a(a);
 			(*moves)--;
 		}
 		else if (*moves < 0)
@@ -60,7 +60,7 @@ static void	do_rotate_b(t_stack **b, int *moves)
 	{
 		if (*moves > 0)
 		{
-			do_rb(b);
+			rotate_b(b);
 			(*moves)--;
 		}
 		else if (*moves < 0)
