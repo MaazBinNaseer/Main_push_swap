@@ -80,5 +80,5 @@ void	execute_moves(t_stack **a, t_stack **b, int moves_a, int moves_b)
 		do_rotate_both(a, b, &moves_a, &moves_b);
 	do_rotate_a(a, &moves_a);
 	do_rotate_b(b, &moves_b);
-	do_pa(a, b);
+	push_a(a, b);
 }

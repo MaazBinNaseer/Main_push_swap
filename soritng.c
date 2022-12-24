@@ -30,7 +30,7 @@ static void	push_all_save_three(t_stack **stack_a, t_stack **stack_b)
 	{
 		if ((*stack_a)->index <= stack_size / 2)
 		{
-			do_pb(stack_a, stack_b);
+			push_b(stack_a, stack_b);
 			pushed++;
 		}
 		else
@@ -39,7 +39,7 @@ static void	push_all_save_three(t_stack **stack_a, t_stack **stack_b)
 	}
 	while (stack_size - pushed > 3)
 	{
-		do_pb(stack_a, stack_b);
+		push_b(stack_a, stack_b);
 		pushed++;
 	}
 }
