@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   position.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbin-nas <mbin-nas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbin-nas <mbin-nas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/26 15:26:20 by mbin-nas          #+#    #+#             */
-/*   Updated: 2022/12/21 12:20:36 by mbin-nas           ###   ########.fr       */
+/*   Created: 2023/01/06 16:08:05 by mbin-nas          #+#    #+#             */
+/*   Updated: 2023/01/06 16:53:40 by mbin-nas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 *	Assigns a position to each element of a stack from top to bottom
 *	in ascending order.
 *	Example stack:
-*		value:		 3	 0	 9	 1
+*		value:			3		0	 9	 1
 *		index:		[3]	[1]	[4]	[2]
 *		position:	<0>	<1>	<2>	<3>
 *	This is used to calculate the cost of moving a certain number to
@@ -25,7 +25,7 @@
 *	push the highest value, 9, which is in third position, it would cost 2 extra
 *	moves to bring that 9 to the top of b before pushing it to stack a.
 */
-static void	get_position(t_stack **stack) 
+static void	get_position(t_stack **stack)
 {
 	t_stack	*tmp;
 	int		i;
@@ -72,7 +72,7 @@ int	get_lowest_index_position(t_stack **stack)
 *	be placed somewhere in between elements in stack A, by checking whether
 *	there is an element in stack A with a bigger index. If not, it finds the
 *	element with the smallest index in A and assigns that as the target position.
-*	--- Example:
+*	@example
 *		target_pos starts at INT_MAX
 *		B index: 3
 *		A contains indexes: 9 4 2 1 0
@@ -81,7 +81,7 @@ int	get_lowest_index_position(t_stack **stack)
 *		2 < 3 && 2 < 4			: no update!
 *	So target_pos needs to be the position of index 4, since it is
 *	the closest index.
-*	--- Example:
+*	@example
 *		target_pos starts at INT_MAX
 *		B index: 20
 *		A contains indexes: 16 4 3
@@ -95,8 +95,7 @@ int	get_lowest_index_position(t_stack **stack)
 *	So target_pos needs to be the position of index 3, since that is
 *	the "end" of the stack.
 */
-static int	get_target(t_stack **a, int b_idx,
-								int target_idx, int target_pos)
+static int	get_target(t_stack **a, int b_idx, int target_idx, int target_pos)
 {
 	t_stack	*tmp_a;
 

@@ -3,15 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   start_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbin-nas <mbin-nas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbin-nas <mbin-nas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 14:44:42 by mbin-nas          #+#    #+#             */
-/*   Updated: 2022/12/21 12:01:18 by mbin-nas           ###   ########.fr       */
+/*   Created: 2023/01/06 16:07:20 by mbin-nas          #+#    #+#             */
+/*   Updated: 2023/01/06 16:07:22 by mbin-nas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
 
 t_stack	*fill_stack_values(int ac, char **av)
 {

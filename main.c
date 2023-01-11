@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbin-nas <mbin-nas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbin-nas <mbin-nas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 14:04:00 by mbin-nas          #+#    #+#             */
-/*   Updated: 2022/12/20 21:56:51 by mbin-nas           ###   ########.fr       */
+/*   Created: 2023/01/06 16:06:54 by mbin-nas          #+#    #+#             */
+/*   Updated: 2023/01/06 19:33:16 by mbin-nas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	check_sorted(t_stack *stack)
 	return (1);
 }
 
-
 static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 {
 	if (stack_size == 2 && !check_sorted(*stack_a))
@@ -34,20 +33,21 @@ static void	push_swap(t_stack **stack_a, t_stack **stack_b, int stack_size)
 		sort(stack_a, stack_b);
 }
 
-
-int arrlen(char **arr) {
-	int i;
+int	arrlen(char **arr)
+{
+	int	i;
 
 	i = 0;
-	while(arr[i]) {
+	while (arr[i])
+	{
 		i++;
 	}
-	return i;
+	return (i);
 }
 
 int	main(int ac, char **av)
 {
-	char **args;	
+	char	**args;
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 	int		stack_size;

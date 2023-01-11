@@ -5,16 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbin-nas <mbin-nas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 17:26:52 by mbin-nas          #+#    #+#             */
-/*   Updated: 2022/12/20 16:20:27 by mbin-nas         ###   ########.fr       */
+/*   Created: 2023/01/06 16:07:33 by mbin-nas          #+#    #+#             */
+/*   Updated: 2023/01/06 16:09:40 by mbin-nas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* rev_rotate:
-*	Brings the bottom element of a stack to the top.
-*/
 static void	rev_rotate(t_stack **stack)
 {
 	t_stack	*tmp;
@@ -29,31 +26,18 @@ static void	rev_rotate(t_stack **stack)
 	before_tail->next = NULL;
 }
 
-/* do_rra:
-*	Brings the bottom element of stack a to the top.
-*	Prints "rra" to the standard output.
-*/
-void	do_rra(t_stack **stack_a)
+void	rev_rot_a(t_stack **stack_a)
 {
 	rev_rotate(stack_a);
 	ft_putstr("rra\n");
 }
 
-/* do_rrb:
-*	Brings the bottom element of stack b to the top.
-*	Prints "rrb" to the standard output.
-*/
-void	do_rrb(t_stack **stack_b)
+void	rev_rot_b(t_stack **stack_b)
 {
 	rev_rotate(stack_b);
 	ft_putstr("rrb\n");
 }
 
-/* do_rrr:
-*	Brings the bottom element of both stack a and stack be
-*	to the top of their respective stacks.
-*	Prints "rrr" to the standard output.
-*/
 void	do_rrr(t_stack **stack_a, t_stack **stack_b)
 {
 	rev_rotate(stack_a);

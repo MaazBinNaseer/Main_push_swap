@@ -3,18 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   stack.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbin-nas <mbin-nas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbin-nas <mbin-nas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 14:26:12 by mbin-nas          #+#    #+#             */
-/*   Updated: 2022/12/21 12:01:18 by mbin-nas           ###   ########.fr       */
+/*   Updated: 2022/12/22 13:56:07 by mbin-nas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* get_stack_bottom:
-*	Returns the last element of the stack.
-*/
 t_stack	*get_stack_bottom(t_stack *stack)
 {
 	while (stack && stack->next != NULL)
@@ -22,9 +19,6 @@ t_stack	*get_stack_bottom(t_stack *stack)
 	return (stack);
 }
 
-/* get_stack_before_bottom:
-*	Returns the second to last element of the stack.
-*/
 t_stack	*get_stack_before_bottom(t_stack *stack)
 {
 	while (stack && stack->next && stack->next->next != NULL)
@@ -32,10 +26,6 @@ t_stack	*get_stack_before_bottom(t_stack *stack)
 	return (stack);
 }
 
-/* stack_new:
-*	Creates a stack elements with the provided value.
-*	Returns the newly created stack element.
-*/
 t_stack	*stack_new(int value)
 {
 	t_stack	*new;
@@ -53,9 +43,6 @@ t_stack	*stack_new(int value)
 	return (new);
 }
 
-/* add_stack_bottom:
-*	Adds an element to the bottom of a stack.
-*/
 void	add_element_to_bottom(t_stack **stack, t_stack *new)
 {
 	t_stack	*tail;
@@ -71,10 +58,7 @@ void	add_element_to_bottom(t_stack **stack, t_stack *new)
 	tail->next = new;
 }
 
-/* fetch_stack_size:
-*	Returns the number of elements in a stack.
-*/
-int	fetch_stack_size(t_stack	*stack)
+int	fetch_stack_size(t_stack *stack)
 {
 	int	size;
 

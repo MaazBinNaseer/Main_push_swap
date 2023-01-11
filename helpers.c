@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   helpers.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbin-nas <mbin-nas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbin-nas <mbin-nas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/25 13:40:24 by mbin-nas          #+#    #+#             */
-/*   Updated: 2022/12/21 12:05:13 by mbin-nas           ###   ########.fr       */
+/*   Created: 2022/12/22 13:54:53 by mbin-nas          #+#    #+#             */
+/*   Updated: 2022/12/22 13:55:31 by mbin-nas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	exit_error(t_stack **stack_a, t_stack **stack_b)
 	if (stack_b == NULL || *stack_b != NULL)
 		free_stack(stack_b);
 	write(2, "Error\n", 6);
-	exit (1);
+	exit(1);
 }
 
 long int	ft_atoi(const char *str)
@@ -73,7 +73,7 @@ void	ft_putstr(char *str)
 	}
 }
 
-// Measuring the distanc to any neg or +ve number -6 or 6
+/* Get the distance from 0 whether it is positive or negative*/
 int	abs_value(int nb)
 {
 	if (nb < 0)

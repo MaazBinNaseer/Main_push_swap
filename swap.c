@@ -6,7 +6,7 @@
 /*   By: mbin-nas <mbin-nas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/25 16:55:55 by mbin-nas          #+#    #+#             */
-/*   Updated: 2022/12/20 16:20:27 by mbin-nas         ###   ########.fr       */
+/*   Updated: 2022/12/22 14:10:26 by mbin-nas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ void	swap_a(t_stack **stack_a)
 	swap(*stack_a);
 	ft_putstr("sa\n");
 }
-
 
 void	swap_b(t_stack **stack_b)
 {

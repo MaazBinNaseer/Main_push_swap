@@ -1,21 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sort.c                                             :+:      :+:    :+:   */
+/*   soritng.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbin-nas <mbin-nas@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mbin-nas <mbin-nas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/04/26 13:32:10 by mbin-nas          #+#    #+#             */
-/*   Updated: 2022/12/21 12:21:53 by mbin-nas           ###   ########.fr       */
+/*   Created: 2022/12/22 14:12:44 by mbin-nas          #+#    #+#             */
+/*   Updated: 2022/12/22 15:12:46 by mbin-nas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* push_all_save_three:
-*	Pushes all the elements of stack a into stack b, except the three last ones.
-*	Pushes the smaller values first, and then the larger values to help with
-*	sorting efficiency.
+/* 
+*	Push three elements and save the last three to sort 
 */
 static void	push_all_save_three(t_stack **stack_a, t_stack **stack_b)
 {
@@ -44,12 +42,7 @@ static void	push_all_save_three(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-/* shift_stack:
-*	After the bulk of the stack is sorted, shifts stack a until the lowest
-*	value is at the top. If it is in the bottom half of the stack, reverse
-*	rotate it into position, otherwise rotate until it is at the top of the
-*	stack.
-*/
+/* Revert the smallest to the top of the stack after everything has sorted*/
 static void	shift_stack(t_stack **stack_a)
 {
 	int	lowest_pos;
@@ -61,7 +54,7 @@ static void	shift_stack(t_stack **stack_a)
 	{
 		while (lowest_pos < stack_size)
 		{
-			do_rra(stack_a);
+			rev_rot_a(stack_a);
 			lowest_pos++;
 		}
 	}
