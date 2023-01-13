@@ -6,11 +6,21 @@
 /*   By: mbin-nas <mbin-nas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 16:06:54 by mbin-nas          #+#    #+#             */
-/*   Updated: 2023/01/06 19:33:16 by mbin-nas         ###   ########.fr       */
+/*   Updated: 2023/01/12 17:53:07 by mbin-nas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+void	free_myself(char **argv)
+{
+	int	i;
+
+	i = -1;
+	while (argv[++i])
+		free(argv[i]);
+	free(argv);
+}
 
 int	check_sorted(t_stack *stack)
 {
@@ -52,19 +62,22 @@ int	main(int ac, char **av)
 	t_stack	*stack_b;
 	int		stack_size;
 
-	if (ac < 2)
-		return (0);
+	call_for_help(ac, av);
 	stack_b = NULL;
 	if (ac == 2)
 		args = ft_split(av[1], ' ');
 	else
 		args = &av[1];
-	if (!is_correct_input(args))
-		exit_error(NULL, NULL);
-	stack_a = fill_stack_values(arrlen(args), args);
+	if (!is_correct_input(args) && ac == 2)
+		exit_error(args, NULL, NULL);
+	if (!is_correct_input(args) && ac > 2)
+		exit_error2();
+	stack_a = fill_stack_values(ac, arrlen(args), args);
 	stack_size = fetch_stack_size(stack_a);
 	assign_index(stack_a, stack_size + 1);
 	push_swap(&stack_a, &stack_b, stack_size);
+	if (ac == 2)
+		free_myself(args);
 	free_stack(&stack_a);
 	free_stack(&stack_b);
 	return (0);

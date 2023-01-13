@@ -42,12 +42,7 @@ static void	push_all_save_three(t_stack **stack_a, t_stack **stack_b)
 	}
 }
 
-/* 
-	Revert the smallest to the top of the stack after everything has sorted
-	If it is in the bottom half of the stack, reverse
-	rotate it into position, otherwise rotate until it is at the top of the
-	stack. 
-*/
+/* Revert the smallest to the top of the stack after everything has sorted*/
 static void	shift_stack(t_stack **stack_a)
 {
 	int	lowest_pos;

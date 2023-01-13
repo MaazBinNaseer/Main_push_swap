@@ -6,13 +6,33 @@
 /*   By: mbin-nas <mbin-nas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/06 16:07:20 by mbin-nas          #+#    #+#             */
-/*   Updated: 2023/01/06 16:07:22 by mbin-nas         ###   ########.fr       */
+/*   Updated: 2023/01/12 17:59:33 by mbin-nas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*fill_stack_values(int ac, char **av)
+void	stop_the_filling(int argc, char **av, int arr_len)
+{
+	int			i;
+	long int	nb;
+
+	i = 0;
+	nb = 0;
+	while (i < arr_len)
+	{
+		nb = ft_atoi(av[i], argc, av);
+		if (nb > INT_MAX || nb < INT_MIN)
+		{
+			if (argc == 2)
+				exit_error(av, NULL, NULL);
+			exit_error2();
+		}
+		i++;
+	}
+}
+
+t_stack	*fill_stack_values(int argc, int arr_len, char **av)
 {
 	t_stack		*stack_a;
 	long int	nb;
@@ -21,11 +41,16 @@ t_stack	*fill_stack_values(int ac, char **av)
 	stack_a = NULL;
 	nb = 0;
 	i = 0;
-	while (i < ac)
+	stop_the_filling(argc, av, arr_len);
+	while (i < arr_len)
 	{
-		nb = ft_atoi(av[i]);
+		nb = ft_atoi(av[i], argc, av);
 		if (nb > INT_MAX || nb < INT_MIN)
-			exit_error(&stack_a, NULL);
+		{
+			if (argc == 2)
+				exit_error(av, &stack_a, NULL);
+			exit_error2();
+		}
 		if (i == 0)
 			stack_a = stack_new((int)nb);
 		else

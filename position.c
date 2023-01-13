@@ -16,7 +16,7 @@
 *	Assigns a position to each element of a stack from top to bottom
 *	in ascending order.
 *	Example stack:
-*		value:		3	 0	 9	 1
+*		value:			3		0		9	 1
 *		index:		[3]	[1]	[4]	[2]
 *		position:	<0>	<1>	<2>	<3>
 *	This is used to calculate the cost of moving a certain number to
@@ -40,6 +40,10 @@ static void	get_position(t_stack **stack)
 	}
 }
 
+/* get_lowest_index_position:
+*	Gets the current position of the element with the lowest index
+*	within a stack.
+*/
 int	get_lowest_index_position(t_stack **stack)
 {
 	t_stack	*tmp;

@@ -6,7 +6,7 @@
 /*   By: mbin-nas <mbin-nas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/01 18:32:00 by mbin-nas          #+#    #+#             */
-/*   Updated: 2022/12/20 18:56:10 by mbin-nas         ###   ########.fr       */
+/*   Updated: 2023/01/13 18:45:23 by mbin-nas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,8 @@ int	ft_wordlen(char const *str, char c)
 	return (length);
 }
 
-char	**ft_split2(char const *str, char c, char **mem)
+char	**ft_split2(char const *str, char c, char **mem, int i)
 {
-	int	i;
 	int	j;
 	int	k;
 
@@ -66,11 +65,11 @@ char	**ft_split2(char const *str, char c, char **mem)
 			j++;
 		mem[i] = (char *)malloc(sizeof(char) * ft_wordlen(&str[j], c) + 1);
 		if (!mem[i])
-			return (NULL);
-		while (str[j] != c && str[j] != '\0')
 		{
-			mem[i][k++] = str[j++];
+			return (NULL);
 		}
+		while (str[j] != c && str[j] != '\0')
+			mem[i][k++] = str[j++];
 		mem[i][k] = '\0';
 	}
 	mem[i] = 0;
@@ -80,30 +79,37 @@ char	**ft_split2(char const *str, char c, char **mem)
 char	**ft_split(char const *str, char c)
 {
 	char	**mem;
+	int		i;
 
+	i = -1;
 	mem = NULL;
 	if (!str)
 		return (NULL);
-	return (ft_split2(str, c, mem));
+	return (ft_split2(str, c, mem, i));
 }
 
-// int main()
+void	exit_error2(void)
+{
+	write(2, "Error\n", 6);
+	exit(0);
+}
+// int main(void)
 // {
-//     // char *str="\0aa\0bbb" ,c='\0';
-//     char str1[]= "*this*is*my*****string";
-// 	char **ptr;
-// 	int i = 0;
-// 		ptr= ft_split(str1, '*');
-//     // printf("-------------------------------\n");
-//     // printf("The value of the count is: %d\n", ft_readwords(str, 'p'));
-//     // printf("-------------------------------\n");
-//     // printf("The value of the count is: %d\n", ft_wordlen(str, 'p'));
-//     // printf("-------------------------------\n");
-//     printf("Printing a split\n");
-// 	while(ptr[i])
-// 	{
-//     	printf("%s\n", ptr[i++]);
+//     char **result;
+//     char *test_string = "This is a test string";
+//     char delimiter = ' ';
+//     result = ft_split(test_string, delimiter);
 
-// 	}
+//     int i = 0;
+//     while (result[i])
+//     {
+//         printf("%s\n", result[i++]);
+//     }
+
+//     //free the memory allocated by ft_split
+//     i = 0;
+//     while (result[i])
+//         free(result[i++]);
+//     free(result);
 //     return (0);
 // }

@@ -6,7 +6,7 @@
 /*   By: mbin-nas <mbin-nas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 13:54:53 by mbin-nas          #+#    #+#             */
-/*   Updated: 2022/12/22 13:55:31 by mbin-nas         ###   ########.fr       */
+/*   Updated: 2023/01/13 19:11:50 by mbin-nas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,50 +27,53 @@ void	free_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-void	exit_error(t_stack **stack_a, t_stack **stack_b)
+void	exit_error(char **argv, t_stack **stack_a, t_stack **stack_b)
 {
 	if (stack_a == NULL || *stack_a != NULL)
 		free_stack(stack_a);
 	if (stack_b == NULL || *stack_b != NULL)
 		free_stack(stack_b);
+	if (argv != NULL) 
+		free_myself(argv);
 	write(2, "Error\n", 6);
 	exit(1);
 }
 
-long int	ft_atoi(const char *str)
+int	ft_atoi(const char *str, int ac, char **av)
 {
-	long int	nb;
+	int 		nb;
+	int			prev;
 	int			isneg;
 	int			i;
 
+	(void)ac;
+	(void)av;
 	nb = 0;
 	isneg = 1;
 	i = 0;
-	if (str[i] == '+')
-		i++;
-	else if (str[i] == '-')
-	{
-		isneg *= -1;
-		i++;
-	}
+	if (str[i] == '-' || str[i] == '+')
+		isneg = 1 - 2 * (str[i++] == '-');
 	while (digit(str[i]))
 	{
+		prev = nb;
 		nb = (nb * 10) + (str[i] - '0');
+		printf("%d\n", nb);
 		i++;
+		
 	}
+	if(nb > INT_MAX)
+			exit_error(av, NULL, NULL);
+		// else if (prev > nb)
+		// {
+		// 	printf("I am getting called\n");
+		// 	if (ac == 2)
+		// 		{
+		// 			exit_error(av, NULL, NULL);
+		// 		}
+		// 		exit_error2();
+		// }
+	exit_error2();
 	return (nb * isneg);
-}
-
-void	ft_putstr(char *str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		write(1, &str[i], 1);
-		i++;
-	}
 }
 
 /* Get the distance from 0 whether it is positive or negative*/

@@ -66,12 +66,7 @@ static void	do_rotate_b(t_stack **b, int *moves)
 		}
 	}
 }
-/* @brief 
-Chooses which move to make to get the B stack element to the correct
-position in stack A. The moves are passed as parameters, which are 
-going to fetched from the moves whether being positive or negative
-therefore, allowing the rotation and reverse rotation to occur. 
-*/
+
 void	execute_moves(t_stack **a, t_stack **b, int moves_a, int moves_b)
 {
 	if (moves_a < 0 && moves_b < 0)
